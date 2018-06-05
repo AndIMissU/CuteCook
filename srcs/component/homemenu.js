@@ -5,28 +5,27 @@ const ScreenWidth = require('Dimensions').get('window').width;
 
 
 class homemenu extends Component {
-  
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.menu}>
           <View style={styles.menuHeader}>
-            <Image style={styles.menuHeaderImg} source={require('../img/avatar.jpg')}/>
+            <Image style={styles.menuHeaderImg} source={require('../img/home/avatar.jpg')}/>
             <Text style={styles.menuHeaderText}>还未设置宝宝专属菜单</Text>
           </View>
           <View style={styles.menuBody}>
             <Text style={styles.menuBodyText}>萌煮热门标签</Text>
             <View style={styles.menuBodyContainer}>
               <View style={styles.menuBodyItem}>
-                <Image style={styles.menuBodyItemImg} source={require('../img/hot-1.png')}/>
+                <Image style={styles.menuBodyItemImg} source={require('../img/home/hot-1.png')}/>
                 <Text style={styles.menuBodyItemText}>烘焙</Text>
               </View>
               <View style={styles.menuBodyItem}>
-                <Image style={styles.menuBodyItemImg} source={require('../img/hot-2.png')}/>
+                <Image style={styles.menuBodyItemImg} source={require('../img/home/hot-2.png')}/>
                 <Text style={styles.menuBodyItemText}>煎饼</Text>
               </View>
               <View style={styles.menuBodyItem}>
-                <Image style={styles.menuBodyItemImg} source={require('../img/hot-3.png')}/>
+                <Image style={styles.menuBodyItemImg} source={require('../img/home/hot-3.png')}/>
                 <Text style={styles.menuBodyItemText}>补钙</Text>
               </View>
             </View>

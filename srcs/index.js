@@ -8,20 +8,20 @@ let Homemenu = require('./component/homemenu');
 let Kindlist = require('./component/kindlist');
 
 const HOME = 'home';
-const HOME_NORMAL = require('./img/home_normal.png');
-const HOME_FOCUS = require('./img/home_pressed.png');
+const HOME_NORMAL = require('./img/common/home_normal.png');
+const HOME_FOCUS = require('./img/common/home_pressed.png');
 const KIND = 'kind';
-const KIND_NORMAL = require('./img/fenlei_normal.png');
-const KIND_FOCUS = require('./img/fenlei_pressed.png');
+const KIND_NORMAL = require('./img/common/fenlei_normal.png');
+const KIND_FOCUS = require('./img/common/fenlei_pressed.png');
 const SHARE = 'share';
-const SHARE_NORMAL = require('./img/fenxiang_normal.png');
-const SHARE_FOCUS = require('./img/fenxiang_pressed.png');
+const SHARE_NORMAL = require('./img/common/fenxiang_normal.png');
+const SHARE_FOCUS = require('./img/common/fenxiang_pressed.png');
 const MESSAGE = 'message';
-const MESSAGE_NORMAL = require('./img/xiaoxi_normal.png');
-const MESSAGE_FOCUS = require('./img/xiaoxi_pressed.png');
+const MESSAGE_NORMAL = require('./img/common/xiaoxi_normal.png');
+const MESSAGE_FOCUS = require('./img/common/xiaoxi_pressed.png');
 const MY = 'my';
-const MY_NORMAL = require('./img/wode_normal.png');
-const MY_FOCUS = require('./img/wode_pressed.png');
+const MY_NORMAL = require('./img/common/wode_normal.png');
+const MY_FOCUS = require('./img/common/wode_pressed.png');
 const ScreenWidth = require('Dimensions').get('window').width;
 
 
