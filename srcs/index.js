@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',  
     alignItems: 'center',
     borderTopWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#e0e0e0',
   },
   tabIcon: {  
     width: 35,  
