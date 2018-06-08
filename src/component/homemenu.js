@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const ScreenWidth = require('Dimensions').get('window').width;
 
@@ -10,7 +10,7 @@ class homemenu extends Component {
       <View style={styles.container}>
         <View style={styles.menu}>
           <View style={styles.menuHeader}>
-            <Image style={styles.menuHeaderImg} source={require('../img/home/avatar.jpg')}/>
+            <Image style={styles.menuHeaderImg} source={require('../img/common/avatar.jpg')}/>
             <Text style={styles.menuHeaderText}>还未设置宝宝专属菜单</Text>
           </View>
           <View style={styles.menuBody}>

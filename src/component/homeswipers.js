@@ -1,6 +1,6 @@
 
-import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, View, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Image } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 var Dimensions = require('Dimensions');
@@ -23,6 +23,7 @@ var swipers = React.createClass({
 var styles = StyleSheet.create({
   wrapper: {
     paddingTop: 20,
+    backgroundColor: '#f9fafc'
   },
   imageSwiper: {
     width: ScreenWidth,

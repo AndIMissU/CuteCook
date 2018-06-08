@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 let Swipers = require('./component/homeswipers');
 let Homelist = require('./component/homelist');
 let Homemenu = require('./component/homemenu');
 let Kindlist = require('./component/kindlist');
+let Myinfo = require('./component/my');
+
+const ScreenWidth = require('Dimensions').get('window').width;
+const PixelRatio = require('PixelRatio');
 
 const HOME = 'home';
 const HOME_NORMAL = require('./img/common/home_normal.png');
@@ -22,8 +26,6 @@ const MESSAGE_FOCUS = require('./img/common/xiaoxi_pressed.png');
 const MY = 'my';
 const MY_NORMAL = require('./img/common/wode_normal.png');
 const MY_FOCUS = require('./img/common/wode_pressed.png');
-const ScreenWidth = require('Dimensions').get('window').width;
-
 
 
 class app extends Component {
@@ -53,31 +55,34 @@ class app extends Component {
               <Homelist></Homelist>
             </View>
           </View>
-        ); break;
+        );
       case 'kind': 
         return (
-          <View style={{flex:1,marginTop:20}}>
+          <View style={{flex:1}}>
+            <View style={{width: ScreenWidth,height:20,backgroundColor: '#f9fafc',}}></View>
             <Kindlist></Kindlist>
           </View>
-        ); break;
+        );
       case 'share': 
         return (
-          <View style={{flex:1,backgroundColor:'#00baff',alignItems:'center',justifyContent:'center'}}>
+          <View style={{flex:1,backgroundColor:'#00baff'}}>
+            <View style={{width: ScreenWidth,height:20,backgroundColor: '#f9fafc',}}></View>
             <Text style={{fontSize:22}}>{tag}</Text>
           </View>
-        ); break;
+        );
       case 'message': 
         return (
-          <View style={{flex:1,backgroundColor:'#00baff',alignItems:'center',justifyContent:'center'}}>
+          <View style={{flex:1,backgroundColor:'#00baff'}}>
+            <View style={{width: ScreenWidth,height:20,backgroundColor: '#f9fafc',}}></View>
             <Text style={{fontSize:22}}>{tag}</Text>
           </View>
-        ); break;
+        );
       case 'my': 
         return (
-          <View style={{flex:1,backgroundColor:'#00baff',alignItems:'center',justifyContent:'center'}}>
-            <Text style={{fontSize:22}}>{tag}</Text>
+          <View style={{flex:1}}>
+            <Myinfo></Myinfo>
           </View>
-        ); break;
+        );
     }; 
 
     
@@ -100,7 +105,7 @@ const styles = StyleSheet.create({
     height: 52,  
     backgroundColor: 'white',  
     alignItems: 'center',
-    borderTopWidth: 1,
+    borderTopWidth: 1/PixelRatio.get(),
     borderColor: '#e0e0e0',
   },
   tabIcon: {  

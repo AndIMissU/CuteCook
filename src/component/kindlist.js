@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native';
-
-var ScrollableTabView = require('react-native-scrollable-tab-view');
-
-const PixelRatio = require('PixelRatio');
-const ScreenWidth = require('Dimensions').get('window').width;
-const ScreenHeight = require('Dimensions').get('window').height;
+import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native';
 
 class DefaultTabBar extends Component {
   constructor(props) {
@@ -307,7 +301,6 @@ class DefaultTabBar extends Component {
     }
     return rightDom;
   }
-
 
   render() {
     return (
