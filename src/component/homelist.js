@@ -5,7 +5,7 @@ class homelist extends Component {
   
   render() {
     return (
-      <View style={StyleSheet.container}><Text>hahaha</Text></View>
+      <View style={styles.container}><Text>hahaha</Text></View>
     )
   }
 }

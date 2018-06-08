@@ -1,13 +1,20 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * CuteCook App
+ * 
+ * @AndIMissU
  */
 
-import index from './src/index';
 import { AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
+import changeMyInfo from './src/pages/changeMyInfo'
+import index from './src/index';
 
 
-AppRegistry.registerComponent('cute_cook', () => {
-  return index
-});
+const appNav = StackNavigator({
+  index: { screen: index },
+  changeMyInfo: { screen: changeMyInfo },
+})
+
+
+AppRegistry.registerComponent('cute_cook', () => appNav);

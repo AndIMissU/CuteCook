@@ -3,17 +3,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const ScreenWidth = require('Dimensions').get('window').width;
 const px = 1 / require('PixelRatio').get();
-const PixelRatio = require('PixelRatio');
+
 
 class myInfo extends Component {
-  
   render() {
     return (
       <View style={styles.container}>
-        <View style={{width: ScreenWidth,height:20,opacity: 0}}></View>
-        <View style={styles.header}>
-          <Text>我的</Text>
-        </View>
         <View style={styles.myinfo}>
           <Image style={styles.myavatar} source={require('../img/common/avatar.jpg')} />
           <Text style={styles.mynickname}>IMissU</Text>
@@ -51,17 +46,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f9fafc',
   },
-  header: {
-    height: 90 * ScreenWidth / 720,
-    width: ScreenWidth,
-    alignItems: 'center', 
-    justifyContent: 'center',
-    borderBottomColor: '#e0e0e0',
-    borderTopColor: '#e0e0e0',
-    borderTopWidth: px,
-    borderBottomWidth: px,
-    backgroundColor: 'white',
-  },
   myinfo: {
     height: 180 * ScreenWidth / 720,
     width: ScreenWidth,
@@ -87,8 +71,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   mynext: {
-    width: 36 * ScreenWidth / 720,
-    height: 36 * ScreenWidth / 720,
+    width: 30 * ScreenWidth / 720,
+    height: 30 * ScreenWidth / 720,
     borderTopColor: '#c7c7c7',
     borderTopWidth: 2,
     borderRightColor: '#c7c7c7',

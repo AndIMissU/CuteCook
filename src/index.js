@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 let Swipers = require('./component/homeswipers');
@@ -10,6 +10,7 @@ let Myinfo = require('./component/my');
 
 const ScreenWidth = require('Dimensions').get('window').width;
 const PixelRatio = require('PixelRatio');
+const px = 1 / require('PixelRatio').get();
 
 const HOME = 'home';
 const HOME_NORMAL = require('./img/common/home_normal.png');
@@ -33,6 +34,10 @@ class app extends Component {
     super(props);
     this.state = {selectedTab: HOME}
   }
+  static navigationOptions = {
+    header:null,  //隐藏顶部导航栏
+  };
+  
   _renderTabItem(img, selectedImg, tag, childView) {  
     return (  
       <TabNavigator.Item  
@@ -44,7 +49,7 @@ class app extends Component {
       </TabNavigator.Item>  
     ); 
   };
-  _createChildView(tag) {
+  _createChildView(tag,navigate) {
     switch(tag){
       case 'home': 
         return (
@@ -80,6 +85,14 @@ class app extends Component {
       case 'my': 
         return (
           <View style={{flex:1}}>
+            <View style={{width: ScreenWidth,height:20,opacity: 0}}></View>
+            <View style={styles.header}>
+              <Text>我的</Text>
+              <TouchableOpacity onPress={()=> navigate('changeMyInfo')} title=''>
+                <Image  style={styles.settings} source={require('./img/myinfo/setting.png')} />
+              </TouchableOpacity>
+              
+            </View>
             <Myinfo></Myinfo>
           </View>
         );
@@ -88,13 +101,14 @@ class app extends Component {
     
   };
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <TabNavigator hidesTabTouch={true} tabBarStyle={styles.tab}>  
         {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, this._createChildView(HOME))}  
         {this._renderTabItem(KIND_NORMAL, KIND_FOCUS, KIND, this._createChildView(KIND))}  
         {this._renderTabItem(SHARE_NORMAL, SHARE_FOCUS, SHARE, this._createChildView(SHARE))}  
         {this._renderTabItem(MESSAGE_NORMAL, MESSAGE_FOCUS, MESSAGE, this._createChildView(MESSAGE))}  
-        {this._renderTabItem(MY_NORMAL, MY_FOCUS, MY, this._createChildView(MY))}  
+        {this._renderTabItem(MY_NORMAL, MY_FOCUS, MY, this._createChildView(MY,navigate))}  
       </TabNavigator> 
     )
   }
@@ -118,7 +132,25 @@ const styles = StyleSheet.create({
     height: 40,
     marginLeft: 5,
     marginTop: 5
-  }
+  },
+  header: {
+    height: 90 * ScreenWidth / 720,
+    width: ScreenWidth,
+    alignItems: 'center', 
+    justifyContent: 'center',
+    borderBottomColor: '#e0e0e0',
+    borderTopColor: '#e0e0e0',
+    borderTopWidth: px,
+    borderBottomWidth: px,
+    backgroundColor: 'white',
+  },
+  settings: {
+    position: 'absolute',
+    width: 40 * ScreenWidth / 720,
+    height: 40 * ScreenWidth / 720,
+    top: - 32 * ScreenWidth / 720,
+    right: - 320 * ScreenWidth / 720,
+  },
 }); 
 
 module.exports = app;
