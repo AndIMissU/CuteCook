@@ -12,8 +12,10 @@ import index from './src/index';
 
 
 const appNav = StackNavigator({
+  
   index: { screen: index },
   changeMyInfo: { screen: changeMyInfo },
+  
 })
 
 
