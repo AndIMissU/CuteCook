@@ -43,10 +43,17 @@ class app extends Component {
       <TabNavigator.Item  
         selected={this.state.selectedTab === tag}  
         renderIcon={() => tag=='share'?(<View style={{width:50,height:50,backgroundColor:'white',marginTop:-20,borderRadius:25}}><Image style={styles.tabShareIcon} source={img}/></View>):(<Image style={styles.tabIcon} source={img}/>)}  
-        renderSelectedIcon={() => tag=='share'?(<View style={{width:50,height:50,backgroundColor:'white',marginTop:-20,borderRadius:25}}><Image style={styles.tabShareIcon} source={selectedImg}/></View>):(<Image style={styles.tabIcon} source={selectedImg}/>)}  
-        onPress={() => this.setState({ selectedTab: tag })}>  
+        renderSelectedIcon={() => <Image style={styles.tabIcon} source={selectedImg}/>}  
+        onPress={() => { 
+          if(tag=='share') {
+            this.props.navigation.navigate('editMenu');
+          } else {
+            this.setState({ selectedTab: tag })
+          }
+        }}>  
         {childView}  
       </TabNavigator.Item>  
+
     ); 
   };
   _createChildView(tag,navigate) {
@@ -68,13 +75,6 @@ class app extends Component {
             <Kindlist></Kindlist>
           </View>
         );
-      case 'share': 
-        return (
-          <View style={{flex:1,backgroundColor:'#00baff'}}>
-            <View style={{width: ScreenWidth,height:20,backgroundColor: '#f9fafc',}}></View>
-            <Text style={{fontSize:22}}>{tag}</Text>
-          </View>
-        );
       case 'message': 
         return (
           <View style={{flex:1,backgroundColor:'#00baff'}}>
@@ -91,7 +91,6 @@ class app extends Component {
               <TouchableOpacity onPress={()=> navigate('changeMyInfo')} title=''>
                 <Image  style={styles.settings} source={require('./img/myinfo/setting.png')} />
               </TouchableOpacity>
-              
             </View>
             <Myinfo></Myinfo>
           </View>

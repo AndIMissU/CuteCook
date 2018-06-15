@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const ScreenWidth = require('Dimensions').get('window').width;
 const ratio = ScreenWidth / 720;
-const px = 1 / require('PixelRatio').get();
 
 class changeMyInfo extends Component {
   static navigationOptions = {

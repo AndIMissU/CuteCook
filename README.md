@@ -29,3 +29,7 @@
 ### Day 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2018.06.09)
 
 - 切完了修改个人详情的页面;
+
+### Day 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2018.06.15)
+
+- 写完了编辑菜谱的页面;
